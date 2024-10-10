@@ -1,0 +1,57 @@
+body {
+    direction: rtl;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    font-family: "Varela Round", sans-serif;
+    margin: 0%;
+}
+
+.oswald-uniquifier {
+    font-family: "Varela Round", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#backLink {
+    text-decoration: none;
+}
+
+.backToShop {
+    width: 41.95px;
+    height: 41.95px;
+    background-color: rgb(228, 177, 240);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15%;
+}
+
+.payPage {
+    /* background-color: blanchedalmond; */
+    height: 90vh;
+    padding: 5%;
+
+}
+
+#customerInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    height: 30px;
+    margin: 10px;
+}
+
+#submit {
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    border: 0px white;
+    
+    background-color: rgb(228, 177, 240);
+    color: white;
+}
