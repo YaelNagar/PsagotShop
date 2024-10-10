@@ -1,0 +1,110 @@
+.allCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.card {
+    margin: 10%;
+    height: 80%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+
+.titleCard {
+    text-align: center;
+}
+
+.div_imgCard {
+    width: 70%;
+    margin-top: 5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imgCard {
+    width: 100%;
+}
+
+.buttomCard {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leftButtomCard,
+.rightButtomCard {
+    width: 30%;
+}
+
+.navPage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.navigate {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.colors {
+    width: 50%;
+}
+
+.campusNotebooks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-2 {
+    margin-top: 2%;
+}
+
+.topFooter {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    background-color: plum;
+}
+
+.buttomFooter {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: gainsboro;
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width: 601px) {
+    .grid {
+        grid-template-columns: repeat(1, auto);
+    }
+}
