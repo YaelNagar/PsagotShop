@@ -1,8 +1,18 @@
+body{
+    font-family: "Varela Round", sans-serif;
+}
+
+  .oswald-uniquifier {
+    font-family: "Varela Round", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 /* big page */
 @media screen and (min-width: 770px) {
 
-    body {
+    .body {
         height: 100vh;
         direction: rtl;
         display: grid;
@@ -60,7 +70,7 @@ hr {
 
 /* small page */
 @media screen and (max-width: 770px) {
-    body {
+    .body {
         height: 100vh;
         direction: rtl;
         display: grid;
