@@ -1,0 +1,123 @@
+body{
+    font-family: "Varela Round", sans-serif;
+}
+
+  .oswald-uniquifier {
+    font-family: "Varela Round", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* big page */
+@media screen and (min-width: 770px) {
+
+    .body {
+        height: 100vh;
+        direction: rtl;
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+
+    #sidebarContent {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+
+    .selector{
+        display: none;
+    }
+
+
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40%;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    height: 90%;
+}
+
+.link:hover{
+    background-color: rgb(164, 164, 240);
+
+}
+
+#sidebar {
+    background-color: rgb(140, 140, 237);
+
+}
+
+hr {
+    width: 80%;
+    border: black 1px solid;
+    color: blueviolet;
+}
+
+/* small page */
+@media screen and (max-width: 770px) {
+    .body {
+        height: 100vh;
+        direction: rtl;
+        display: grid;
+        grid-template-rows: 10% 80%;
+    }
+
+    #sidebarContent {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+
+    .selector{
+        right: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    hr {
+        display: none;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 30%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .link {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 0% 3%;
+        /* height: 90%; */
+    }
+    
+    .typesLinks{
+        display: none;
+    }
+}
