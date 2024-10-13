@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pay.css" />
     <title>Document</title>
     <script defer type="module" src="../javaScript/javaScript.js"></script>
 
 </head>
+
 <body>
-    <h1>כמה פרטים </h1>
+    <a id="backLink" href="index.html">
+        <div class="backToShop">→</div>
+    </a>
+    <div class="payPage">
+        <h1>כמה פרטים וסיימנו... </h1>
+
+        <p>תשלום בביט או בפייבוקס</p>
+
+        <form id="customerInfo">
+            <input type="text" placeholder="כתובת" />
+            <input type="text" placeholder="טלפון" />
+
+        </form>
+        
+        <div class="orders"></div>
+        
+        <button type="submit" id="submit">שליחה</button>
+    </div>
+
+    <script src="../javaScript/pay.js"></script>
 </body>
+
 </html>

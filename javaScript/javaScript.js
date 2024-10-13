@@ -132,14 +132,12 @@ const showCard = (i) => {
     document.getElementsByClassName("blackOpacityDiv")[0].appendChild(showCard);
 }
 
-const addToBag = (productId) => {
-    add_1(productId);
-    //שינוי צבע לירוק בעת לחיצה
+const addToBag = (cardId, productId) => {
+    const product = products[productId];
+    let items = JSON.parse(localStorage.getItem(key)) || [];
+    const cartProduct = JSON.parse(localStorage.getItem("cartProducts")) || [];
     cartProduct.push(products[productId]);
-    localStorage.setItem("cartProducts_order", JSON.stringify(cartProduct));
-    let countInCart = JSON.parse(localStorage.getItem("cartProducts_order")).length;
-    document.getElementById("shoppingCart").textContent = `🛒 לתשלום (${countInCart})`
-    //כשעושים לתשלום לאפס את הלוקל סטורג
+    localStorage.setItem("cartProducts", JSON.stringify(cartProduct));
 }
 
 const closeCardShow = () => {
@@ -150,15 +148,12 @@ const closeCardShow = () => {
 const selector = () => {
     document.getElementById('chosenTypeId').addEventListener('change', function () {
         const selectedValue = this.value;
+
         // קישור אל הקישור המתאים
         if (selectedValue === 'craft') {
-            const category = document.getElementById("writingTool").textContent = "כלי כתיבה";
-            products = data.craft;
-            createCards();
+            window.location.href = 'craft'; // אם מדובר בכלי כתיבה
         } else if (selectedValue === 'notebooks') {
-            const category = document.getElementById("writingTool").textContent = "מחברות";
-            products = data.notebooks;
-            createCards();
+            window.location.href = 'notebooks'; // אם מדובר במחברות
         }
     });
 }
