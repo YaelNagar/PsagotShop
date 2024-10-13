@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const createCards = () => {
+    document.getElementById("shoppingCart").textContent = `🛒 לתשלום (${cartProduct.length})`
     const grid = document.getElementById("grid");
     grid.innerHTML = '';
     for (let i = 0; i < products.length; i++) {

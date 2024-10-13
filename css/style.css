@@ -267,19 +267,16 @@ body {
     height: 90%;
     border: none;
     border-left: 1px solid #dbdbdb;
-    /* background-color: rgb(255, 225, 255); */
     background-color: white;
     font-size: 16px;
 }
 
 .link:hover {
     cursor: pointer;
-    /* background-color: rgb(228, 177, 240); */
     background-color: #eafaff;
 }
 
 #sidebar {
-    /* background-color: rgb(255, 225, 255); */
     background-color: white;
     border-left: 1px solid #dbdbdb;
 }
@@ -316,7 +313,6 @@ hr {
         align-items: center;
     }
 
-
     hr {
         display: none;
     }
@@ -336,15 +332,10 @@ hr {
         font-weight: bold;
         padding: 0% 3%;
         border: none;
-        /* background-color: rgb(255, 225, 255); */
         font-size: 16px;
     }
 
     .typesLinks {
-        display: none;
-    }
-
-    .txtMessage {
         display: none;
     }
 
@@ -404,51 +395,20 @@ hr {
     right: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #addButton {
     transition: background-color 0.3s;
 }
 
-
 .notification {
-    /* position: absolute; */
     bottom: 50%;
-    /* גובה הכפתור */
     right: 50%;
-    /* מרכז */
     transform: translateX(50%);
     padding: 10px;
     background-color: #9434b6;
     color: white;
     border-radius: 50%;
-
     font-weight: bold;
     opacity: 0;
     transform: translateY(0);
     transition: opacity 0.5s, transform 0.5s;
 }
-
-/* .hidden {
-    display: block;
-} */
