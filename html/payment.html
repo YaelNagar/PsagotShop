@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pay.css" />
     <title>Document</title>
-    <script defer type="module" src="../javaScript/javaScript.js"></script>
+    <!-- <script defer type="module" src="../javaScript/javaScript.js"></script> -->
 
 </head>
 
 <body>
-    <a id="backLink" href="index.html">
+    <a id="backLink" href="#" onclick="history.back(); return false;">
         <div class="backToShop">→</div>
     </a>
     <div class="payPage">
@@ -20,8 +20,8 @@
         <p>תשלום בביט או בפייבוקס</p>
 
         <form id="customerInfo">
-            <input type="text" placeholder="כתובת" />
-            <input type="text" placeholder="טלפון" />
+            <input type="text" id="address" placeholder="כתובת" required />
+            <input type="text" id="phone" placeholder="טלפון" required/>
 
         </form>
         
