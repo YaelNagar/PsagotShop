@@ -5,7 +5,6 @@ const orderPlace = document.getElementsByClassName("orders")[0];
 let finalPrice = 0;
 if (ordersString) {
     const orders = JSON.parse(ordersString);
-    // const orders = ordersString;
     const productCount = {};
 
     // ספירת המוצרים
@@ -39,7 +38,7 @@ if (ordersString) {
         let basePrice = order.price;
         quantity.textContent = currentQuantity;
         title.textContent = order.title;
-        price.textContent = basePrice.toFixed(2);
+        price.textContent = `${basePrice.toFixed(2)} ₪`;
         buttonPlus.textContent = "+1";
         buttonMinus.textContent = "-1";
 
@@ -59,12 +58,10 @@ if (ordersString) {
             quantity.textContent = currentQuantity; // עדכון התצוגה
 
             const newPrice = (order.price * currentQuantity).toFixed(2);
-            price.textContent = newPrice;
-            console.log(order.price);
-            console.log(Number(order.price));
+            price.textContent = `${newPrice} ₪`;
 
             finalPrice += Number(order.price);
-            printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)}`;
+            printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)} ₪`;
 
             order.quantity = currentQuantity; // הוסף כמות לפריט
 
@@ -81,16 +78,16 @@ if (ordersString) {
             if (currentQuantity > 1) {
                 currentQuantity--;
                 quantity.textContent = currentQuantity; // עדכון התצוגה
-                price.textContent = (order.price * currentQuantity).toFixed(2);
+                price.textContent = `${(order.price * currentQuantity).toFixed(2)} ₪`;
                 finalPrice -= order.price;
-                printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)}`;
+                printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)} ₪`;
             } else {
 
                 const updatedOrders = orders.filter(o => o.catalogId !== order.catalogId);
                 localStorage.setItem('cartProducts_order', JSON.stringify(updatedOrders));
 
                 finalPrice -= order.price;
-                printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)}`;
+                printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)} ₪`;
                 product.remove();
                 line.remove();
             }
@@ -110,7 +107,7 @@ if (ordersString) {
     });
 
     console.log(typeof finalPrice);
-    printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)}`;
+    printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)} ₪`;
     printPrice.style.marginRight = "30px";
     printPrice.style.marginTop = "30px";
 
@@ -126,8 +123,8 @@ const sendButton = document.getElementById("submit");
 
 sendButton.addEventListener("click", () => {
     debugger
-    const address = document.getElementById("address");
-    const phone = document.getElementById("phone");
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
 
     if (address && phone) {
         setTimeout(() => {
