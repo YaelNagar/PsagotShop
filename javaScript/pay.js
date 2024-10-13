@@ -1,16 +1,31 @@
-
+// debugger
 const ordersString = localStorage.getItem('cartProducts_order');
 const orderPlace = document.getElementsByClassName("orders")[0];
 
 let finalPrice = 0;
 if (ordersString) {
     const orders = JSON.parse(ordersString);
+    // const orders = ordersString;
+    const productCount = {};
+
+    // ספירת המוצרים
+    orders.forEach(product => {
+        // אם המוצר כבר קיים, מגביר את הספירה
+        debugger
+        if (productCount[product.catalogId]) {
+            productCount[product.catalogId].count += 1;
+        } else {
+            // אם המוצר חדש, מוסיף אותו לאובייקט
+            productCount[product.catalogId] = { ...product, count: 1 };
+        }
+    });
+    const uniqueProducts = Object.values(productCount);
 
     const printPrice = document.createElement("div");
 
     console.log(orders);
 
-    orders.forEach(order => {
+    uniqueProducts.forEach(order => {
         const product = document.createElement("div");
         const quantity = document.createElement("div");
         const title = document.createElement("div");
@@ -20,7 +35,7 @@ if (ordersString) {
         const buttonMinus = document.createElement("button");
         const line = document.createElement("hr");
 
-        let currentQuantity = 1;
+        let currentQuantity = order.count;
         let basePrice = order.price;
         quantity.textContent = currentQuantity;
         title.textContent = order.title;
@@ -39,18 +54,6 @@ if (ordersString) {
         buttonPlus.classList.add("plus");
         buttonMinus.classList.add("minus");
 
-        // buttonPlus.addEventListener("click", () => {
-        //     currentQuantity++;
-        //     quantity.textContent = currentQuantity; // עדכון התצוגה
-
-        //     price.textContent = (order.price * currentQuantity).toFixed(2);
-        //     console.log(order.price);
-        //     console.log(Number(order.price));
-
-        //     finalPrice += Number(order.price);
-        //     printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)}`;
-        // });
-
         buttonPlus.addEventListener("click", () => {
             currentQuantity++;
             quantity.textContent = currentQuantity; // עדכון התצוגה
@@ -64,19 +67,11 @@ if (ordersString) {
             printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)}`;
 
             order.quantity = currentQuantity; // הוסף כמות לפריט
-            // const updatedOrders = orders.map(o => {
-            //     if (o.catalogId === order.catalogId) {
-            //         return { ...o, quantity: currentQuantity }; // עדכן את הכמות
-            //     }
-            //     return o;
-            // });
 
             let updatedOrders = JSON.parse(localStorage.getItem('cartProducts_order')) || [];
 
             // דחוף את המוצר החדש
             updatedOrders.push(order);
-
-            // עדכן את ה-localStorage
             localStorage.setItem('cartProducts_order', JSON.stringify(updatedOrders));
 
         });
@@ -130,11 +125,19 @@ if (ordersString) {
 const sendButton = document.getElementById("submit");
 
 sendButton.addEventListener("click", () => {
-    console.log("sdfghj");
-    setTimeout(() => {
-        orderPlace.innerHTML = '✅'
-    }, 500);
-    localStorage.clear(); 
+    debugger
+    const address = document.getElementById("address");
+    const phone = document.getElementById("phone");
+
+    if (address && phone) {
+        setTimeout(() => {
+            orderPlace.innerHTML = '✅'
+        }, 500);
+        localStorage.clear();
+    } else {
+        alert("יש להשלים את כל השדות.");
+    }
+
 })
 
 
