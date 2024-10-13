@@ -1,6 +1,5 @@
 import data from '../data/products.json' with {type: 'json'}
 
-
 let products = data.craft;
 const cartProduct = JSON.parse(localStorage.getItem("cartProducts_order")) || [];
 
