@@ -1,4 +1,5 @@
 .txtMessage {
+    width: 90%;
     height: 50PX;
     display: flex;
     justify-content: center;
@@ -8,15 +9,38 @@
     color: rgb(126, 96, 191);
 }
 
-.writingTool {
-    height: 80px;
-    font-size: 100%;
+.logo {
+    position: absolute;
+    right: 5%;
+    bottom: 70%;
+    width: 7%;
+}
+
+#writingTool {
+    font-size: 50px;
     display: flex;
-    text-align: center;
+    align-items: center;
+    font-size: 2.7rem;
+    word-spacing: .5rem;
+    letter-spacing: .07rem;
+    font-family: 'Amatic SC', sans-serif !important;
+    font-weight: 900;
+}
+
+#category1,
+#category2 {
+    font-family: 'Calibri', sans-serif;
+    border-left: 1px solid #dbdbdb;
+}
+
+.div_w-Top {
+    width: 100%;
+    margin-right: 5%;
+    display: flex;
     align-items: center;
 }
 
-.div_imgTop {
+.div_Top {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -34,6 +58,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 5%;
 }
 
 .grid {
@@ -45,7 +70,7 @@
 .card {
     margin: 10%;
     height: 80%;
-    border: 1px solid black;
+    border: 1px solid #dbdbdb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +85,7 @@
 }
 
 .div_imgCard {
-    width: 70%;
+    width: 50%;
     margin-top: 5%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,9 +102,28 @@
     align-items: center;
 }
 
-.leftButtomCard,
-.rightButtomCard {
-    width: 30%;
+.addToCart {
+    background-color: #d9d9d9;
+    color: #484848;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 100;
+    padding: 4px 8px;
+}
+
+.addToCart:hover {
+    color: white;
+    background-color: #484848;
+}
+
+.addToCart:active {
+    background-color: green
+}
+
+.LeftbuttomCard {
+    color: #9434b6;
 }
 
 .navPage {
@@ -116,16 +160,32 @@
 }
 
 footer {
+    z-index: 1;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
 .topFooter {
+    width: 100%;
     height: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(255, 225, 255);
+}
+
+.m-RL {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instegram_facebook {
+    width: 45%;
+    height: 30px;
+    background-repeat: no-repeat;
 }
 
 .buttomFooter {
@@ -137,12 +197,14 @@ footer {
 }
 
 body {
-    font-family: "Varela Round", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: 'Calibri', sans-serif;
     margin: 0;
 }
 
 .oswald-uniquifier {
     font-family: "Varela Round", sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -159,6 +221,7 @@ body {
     }
 
     #sidebarContent {
+        position: relative;
         height: 70vh;
         width: 20%;
         display: flex;
@@ -166,6 +229,7 @@ body {
         justify-content: space-evenly;
         font-size: 16px;
         position: fixed;
+        cursor: pointer;
     }
 
     .selector {
@@ -177,6 +241,7 @@ body {
     .grid {
         grid-template-columns: repeat(2, auto);
     }
+
 }
 
 @media (max-width: 601px) {
@@ -200,21 +265,31 @@ body {
     color: black;
     font-weight: bold;
     height: 90%;
+    border: none;
+    border-left: 1px solid #dbdbdb;
+    /* background-color: rgb(255, 225, 255); */
+    background-color: white;
+    font-size: 16px;
 }
 
 .link:hover {
-    background-color: rgb(255, 225, 255)
+    cursor: pointer;
+    /* background-color: rgb(228, 177, 240); */
+    background-color: #eafaff;
 }
 
 #sidebar {
-    background-color: rgb(228, 177, 240)
+    /* background-color: rgb(255, 225, 255); */
+    background-color: white;
+    border-left: 1px solid #dbdbdb;
 }
 
 hr {
-    width: 80%;
-    border: black 1px solid;
+    width: 90%;
+    border: #dbdbdb 1px solid;
     color: blueviolet;
     margin-top: 0px;
+    margin-right: 0px;
 }
 
 /* small page */
@@ -256,17 +331,124 @@ hr {
     }
 
     .link {
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
         text-decoration: none;
         color: black;
         font-weight: bold;
         padding: 0% 3%;
-        /* height: 90%; */
+        border: none;
+        /* background-color: rgb(255, 225, 255); */
+        font-size: 16px;
     }
 
     .typesLinks {
         display: none;
     }
+
+    .txtMessage {
+        display: none;
+    }
+
+    #writingTool {
+        height: 50px;
+        font-size: 20px;
+    }
 }
+
+.showCard {
+    width: 50%;
+    background-color: white;
+    z-index: 2;
+    border: 1px solid black;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.purpleAdd {
+    background-color: #9434b6;
+    color: white;
+    padding: 2%;
+    border: none;
+}
+
+.imgShowCard {
+    width: 100%;
+    height: 100%;
+}
+
+.closeCard {
+    border: none;
+    background-color: #898989;
+    border-radius: 50%;
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+
+.m-3 {
+    margin: 1% 1% 0% 1%;
+}
+
+.blackOpacityDiv {
+    z-index: 11;
+    height: 100vh;
+    background-color: #000000aa;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#addButton {
+    transition: background-color 0.3s;
+}
+
+
+.notification {
+    /* position: absolute; */
+    bottom: 50%;
+    /* גובה הכפתור */
+    right: 50%;
+    /* מרכז */
+    transform: translateX(50%);
+    padding: 10px;
+    background-color: #9434b6;
+    color: white;
+    border-radius: 50%;
+
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* .hidden {
+    display: block;
+} */

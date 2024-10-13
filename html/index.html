@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <script defer type="module" src="../javaScript/javaScript.js"></script>
 
     <title>PsagotShop</title>
@@ -15,8 +16,8 @@
         <div id="sidebar">
             <div id="sidebarContent">
                 <div class="links typesLinks">
-                    <a class="link craft" href="">כלי כתיבה</a>
-                    <a class="link notebooks" href="notebooks">מחברות</a>
+                    <button id="category1" class="link craft">כלי-כתיבה</button>
+                    <button id="category2" class="link notebooks">מחברות</button>
                 </div>
                 <div class="selector">
                     <select name="chosenType" id="chosenTypeId">
@@ -27,21 +28,24 @@
                 <hr />
                 <div class="links payLinks">
                     <a class="link pay" href="shoppingBasket.html">סל קניות</a>
-                    <a class="link pay" href="payment.html">לתשלום</a>
+                    <a id="shoppingCart" class="link pay" href="payment.html">🛒 לתשלום</a>
                 </div>
             </div>
+
         </div>
-        <div class="">
+        <div class="w-80">
             <div class="topBody">
-                <div class="div_top">
+                <div class="div_Top">
                     <div class="txtMessage">משלוחים חינם בפסגות אפק</div>
                 </div>
-                <div class="writingTool"></div>
-                <div class="div_imgTop">
+                <div class="div_w-Top">
+                    <div id="writingTool">כלי-כתיבה</div>
+                </div>
+                <div class="div_Top">
                     <img class="imgTop" src="../images/4119966.jpg">
                 </div>
             </div>
-            <div class="allCards">
+            <div class="allCards div_Top">
                 <div id="grid" class="grid"></div>
             </div>
 
@@ -57,7 +61,14 @@
         </div>
     </div>
     <footer class="m-2">
-        <div class="topFooter"></div>
+        <div><img class="logo" src="../images/logoShop.png"></div>
+        <div class="topFooter">
+            <div class="mRL-2">
+                <img class="instegram_facebook" src="../images/instagram.png">
+                <img class="instegram_facebook" src="../images/facebook.png">
+            </div>
+        </div>
+        </div>
         <div class="buttomFooter">
             <p>פסגות שופ</p>
             <p>תנאים | שרות לקוחות</p>
