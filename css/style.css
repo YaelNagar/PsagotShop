@@ -197,14 +197,12 @@ footer {
 }
 
 body {
-    /* font-family: "Roboto", sans-serif; */
     font-family: 'Calibri', sans-serif;
     margin: 0;
 }
 
 .oswald-uniquifier {
     font-family: "Varela Round", sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;

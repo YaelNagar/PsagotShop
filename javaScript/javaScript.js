@@ -49,7 +49,6 @@ const createCards = () => {
         const notification = document.createElement("div");
         notification.classList.add("hidden");
         notification.classList.add("notification");
-        // notification.id = "notification";
         notification.id = `notification${i}`;
         notification.textContent = "1+";
         card.appendChild(notification);
@@ -57,7 +56,6 @@ const createCards = () => {
         const buttomCard = document.createElement("div");
         buttomCard.classList.add("buttomCard");
         const RightbuttomCard = document.createElement("button");
-        // RightbuttomCard.id = `button${i}`;
         RightbuttomCard.id = `addButton`;
         const LeftbuttomCard = document.createElement("p");
         RightbuttomCard.textContent = "הוספה לסל";
@@ -133,15 +131,16 @@ const showCard = (i) => {
 }
 
 const addToBag = (productId) => {
+    //הצגת ההודעה 
     add_1(productId);
     //שינוי צבע לירוק בעת לחיצה
     cartProduct.push(products[productId]);
     localStorage.setItem("cartProducts_order", JSON.stringify(cartProduct));
     let countInCart = JSON.parse(localStorage.getItem("cartProducts_order")).length;
     document.getElementById("shoppingCart").textContent = `🛒 לתשלום (${countInCart})`
-    //כשעושים לתשלום לאפס את הלוקל סטורג
 }
 
+//סגירת הדיב שמציג את פרטי המוצר
 const closeCardShow = () => {
     const blackOpacityDiv = document.getElementsByClassName("blackOpacityDiv")[0];
     document.getElementsByClassName("allCards")[0].removeChild(blackOpacityDiv);
