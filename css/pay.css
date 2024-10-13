@@ -4,6 +4,10 @@ body {
     grid-template-columns: 10% 90%;
     font-family: "Varela Round", sans-serif;
     margin: 0%;
+    background-color: rgb(239, 237, 237);
+
+    font-family: 'Calibri', sans-serif;
+    margin: 0;
 }
 
 .oswald-uniquifier {
@@ -52,17 +56,18 @@ input {
 .product {
     display: grid;
     grid-template-columns: 5% 45% 10% 35%;
-    justify-content:flex-end;
-    color: rgb(208, 207, 207);
+    justify-content: flex-end;
+    color: rgb(152, 151, 151);
     margin-top: 5%;
+    font-size: 14px;
 }
 
 .qChange {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 0px white;
-    color: white;
+    border: 1px rgb(50, 50, 50) solid;
+    color: #9434b6;;
     cursor: pointer;
 }
 
@@ -90,6 +95,6 @@ hr {
     margin-bottom: 5%;
 }
 
-#submit:hover{
+#submit:hover {
     background-color: rgb(126, 96, 191);
 }
