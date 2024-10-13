@@ -1,7 +1,9 @@
 import data from '../data/products.json' with {type: 'json'}
 
 
-const products = data.notebooks
+const products = data.notebooks;
+//למחוק לפני שמעלים
+const cartProduct = JSON.parse(localStorage.getItem("cartProducts_order")) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
     const createCards = () => {
@@ -41,25 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
     createCards();
 });
 
+//למחוק לפני שמעלים
 const addToBag = (cardId, productId) => {
-    const product = products[productId];
-    let items = JSON.parse(localStorage.getItem(key)) || [];
-    const cartProduct = JSON.parse(localStorage.getItem("cartProducts")) || [];
     cartProduct.push(products[productId]);
-    localStorage.setItem("cartProducts", JSON.stringify(cartProduct));
+    localStorage.setItem("cartProducts_order", JSON.stringify(cartProduct));
 }
 
 
 const selector = () => {
-    document.getElementById('chosenTypeId').addEventListener('change', function () {
-        const selectedValue = this.value;
+    if (window.innerWidth < '768px') {
+        document.getElementById('chosenTypeId').addEventListener('change', function () {
+            const selectedValue = this.value;
 
-        // קישור אל הקישור המתאים
-        if (selectedValue === 'craft') {
-            window.location.href = 'craft'; // אם מדובר בכלי כתיבה
-        } else if (selectedValue === 'notebooks') {
-            window.location.href = 'notebooks'; // אם מדובר במחברות
-        }
-    });
+            // קישור אל הקישור המתאים
+            if (selectedValue === 'craft') {
+                window.location.href = 'craft'; // אם מדובר בכלי כתיבה
+            } else if (selectedValue === 'notebooks') {
+                window.location.href = 'notebooks'; // אם מדובר במחברות
+            }
+        });
+    }
 }
 

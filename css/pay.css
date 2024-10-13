@@ -26,7 +26,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15%;
+    /* margin: 15%; */
+    position: fixed;
+    top: 30px;
+    right: 30px;
 }
 
 .payPage {
@@ -46,12 +49,47 @@ input {
     margin: 10px;
 }
 
+.product {
+    display: grid;
+    grid-template-columns: 5% 45% 10% 35%;
+    justify-content:flex-end;
+    color: rgb(208, 207, 207);
+    margin-top: 5%;
+}
+
+.qChange {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0px white;
+    color: white;
+    cursor: pointer;
+}
+
+.bothButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+hr {
+    border: 0.1px rgb(225, 222, 222) solid;
+    width: 95%;
+}
+
 #submit {
     width: 150px;
     height: 50px;
     border-radius: 30px;
     border: 0px white;
-    
+
     background-color: rgb(228, 177, 240);
     color: white;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#submit:hover{
+    background-color: rgb(126, 96, 191);
 }
