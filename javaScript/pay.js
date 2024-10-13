@@ -1,4 +1,3 @@
-// debugger
 const ordersString = localStorage.getItem('cartProducts_order');
 const orderPlace = document.getElementsByClassName("orders")[0];
 
@@ -10,7 +9,6 @@ if (ordersString) {
     // ספירת המוצרים
     orders.forEach(product => {
         // אם המוצר כבר קיים, מגביר את הספירה
-        debugger
         if (productCount[product.catalogId]) {
             productCount[product.catalogId].count += 1;
         } else {
@@ -42,7 +40,7 @@ if (ordersString) {
         buttonPlus.textContent = "+1";
         buttonMinus.textContent = "-1";
 
-        finalPrice += Number(basePrice.toFixed(2));
+        finalPrice += (Number(basePrice) * currentQuantity.toFixed(2));
         console.log(basePrice);
 
 
@@ -76,16 +74,17 @@ if (ordersString) {
 
         buttonMinus.addEventListener("click", () => {
             if (currentQuantity > 1) {
+                const index = orders.indexOf(order.catalogId);
+                orders.splice(index, 1);
+                localStorage.setItem('cartProducts_order', JSON.stringify(orders));
                 currentQuantity--;
                 quantity.textContent = currentQuantity; // עדכון התצוגה
                 price.textContent = `${(order.price * currentQuantity).toFixed(2)} ₪`;
                 finalPrice -= order.price;
                 printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)} ₪`;
             } else {
-
                 const updatedOrders = orders.filter(o => o.catalogId !== order.catalogId);
                 localStorage.setItem('cartProducts_order', JSON.stringify(updatedOrders));
-
                 finalPrice -= order.price;
                 printPrice.textContent = `לתשלום: ${finalPrice.toFixed(2)} ₪`;
                 product.remove();
@@ -129,6 +128,7 @@ sendButton.addEventListener("click", () => {
     if (address && phone) {
         setTimeout(() => {
             orderPlace.innerHTML = '✅'
+            customerInfo.reset();
         }, 500);
         localStorage.clear();
     } else {
